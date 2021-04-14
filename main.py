@@ -10,7 +10,7 @@ chrome_options.add_argument("--headless")
 chrome_options.add_argument("--disable-dev-shm-usage")
 chrome_options.add_argument("--no-sandbox")
 chrome_options.add_argument('--log-level=3')
-driver = webdriver.Chrome(executable_path='/app/chromedriver', chrome_options=chrome_options)
+driver = webdriver.Chrome(executable_path='/app', chrome_options=chrome_options)
 
 def time():
 	return(strftime('%X'))
