@@ -40,8 +40,8 @@ def login():
 	driver.find_element_by_id('imageLogin').click() # Нажимаем логин
 	sleep(randint(2,4))
 
-	#code = input("Enter your Steam Guard code: ")
-	code = STEAM_CODE
+	code = input("Enter your Steam Guard code: ")
+	#code = STEAM_CODE
 	driver.find_element_by_id('twofactorcode_entry').send_keys(code) # Вписываем 2F код http://www.realix.ru/?p=1144
 	sleep(randint(2,4))
 
