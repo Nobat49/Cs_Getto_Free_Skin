@@ -31,8 +31,9 @@ def login():
 	driver.switch_to.window(pages[-1])
 	sleep(randint(2,4))
 
-	driver.find_element_by_id('acceptAllButton').click() # Принимаем куки
-	sleep(randint(2,4))
+	try:
+		driver.find_element_by_id('acceptAllButton').click() # Принимаем куки
+		sleep(randint(2,4))
 
 	driver.find_element_by_id('steamAccountName').send_keys('noibat49') # Вписываем логин
 	sleep(randint(2,4))
