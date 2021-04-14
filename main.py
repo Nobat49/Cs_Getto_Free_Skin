@@ -39,7 +39,10 @@ def login():
 
 	driver.find_element_by_id('imageLogin').click() # Нажимаем логин
 	sleep(randint(2,4))
-
+	
+	main_page = driver.page_source
+	print(main_page)
+"""
 	code = input("Enter your Steam Guard code: ")
 	#code = STEAM_CODE
 	driver.find_element_by_id('twofactorcode_entry').send_keys(code) # Вписываем 2F код http://www.realix.ru/?p=1144
@@ -73,3 +76,4 @@ while True:
 	except:
 		print(f'[{time()}] Impossible to get skin, cooldown 10 minutes')
 		sleep(600)
+"""
