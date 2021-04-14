@@ -39,9 +39,11 @@ def login():
 
 	driver.find_element_by_id('imageLogin').click() # Нажимаем логин
 	sleep(randint(2,4))
-	
+
 	main_page = driver.page_source
 	print(main_page)
+
+login()
 """
 	code = input("Enter your Steam Guard code: ")
 	#code = STEAM_CODE
