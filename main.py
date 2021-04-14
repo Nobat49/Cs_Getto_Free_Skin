@@ -37,8 +37,8 @@ def login():
 	driver.find_element_by_id ('steamPassword').send_keys('19216812a') # Вписываем пароль
 	sleep(randint(2,4))
 
-	driver.find_element_by_id('imageLogin').click() # Нажимаем логин
-	sleep(randint(2,4))
+#	driver.find_element_by_id('imageLogin').click() # Нажимаем логин
+#	sleep(randint(2,4))
 
 	main_page = driver.page_source
 	print(main_page)
