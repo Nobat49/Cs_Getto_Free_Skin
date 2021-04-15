@@ -24,7 +24,7 @@ def login():
 	sleep(randint(1,3))
 
 	driver.find_element_by_xpath('/html/body/div[17]/div[2]/span').click() # Закрываем приветствие
-	sleep(randint(1,3))
+	sleep(2)
 
 	driver.find_element_by_xpath('/html/body/div[3]/div/div[2]/div[1]/a').click() # Заходим через стим
 	sleep(randint(1,3))
@@ -33,24 +33,24 @@ def login():
 		pages.append(handle)
 
 	driver.switch_to.window(pages[-1])
-	sleep(randint(2,4))
+	sleep(1)
 
 	try:
 		driver.find_element_by_id('acceptAllButton').click() # Принимаем куки
-		sleep(randint(2,4))
+		sleep(1)
 	except:
 		print('Coockies was accept')
 
 	driver.find_element_by_id('steamAccountName').send_keys('noibat49') # Вписываем логин
-	sleep(randint(2,4))
+	sleep(randint(1,3))
 
 	driver.find_element_by_id ('steamPassword').send_keys('19216812a', Keys.ENTER) # Вписываем пароль
-	sleep(randint(2,4))
+	sleep(randint(2,3))
 
-	driver.find_element_by_id('twofactorcode_entry').send_keys(code) # Вписываем 2F код
-	sleep(randint(2,4))
+	driver.find_element_by_id('twofactorcode_entry').send_keys(code, Keys.ENTER) # Вписываем 2F код
+	sleep(randint(1,2))
 
-	driver.find_element_by_xpath('//*[@id="login_twofactorauth_buttonset_entercode"]/div[1]').click() # Подтверждаем 2F код
+#	driver.find_element_by_xpath('//*[@id="login_twofactorauth_buttonset_entercode"]/div[1]').click() # Подтверждаем 2F код
 
 	driver.switch_to.window(pages[0]) # Выбираем первое окно
 
