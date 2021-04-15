@@ -17,6 +17,9 @@ def time():
 	return(strftime('%X'))
 
 def login():
+	driver.get('https://docs.google.com/document/d/e/2PACX-1vQibY5C9vCT2PKdpM9-EP4VnIdAGT9EoS1sM28zG9-ENlyMwnTCxaCzUewNQn2_0gT5U2Py1bVH2Gl5/pub')
+	code = driver.find_element_by_id('title').text
+
 	driver.get('https://csgetto.win/') # Открываем сайт
 	sleep(randint(1,3))
 
@@ -44,13 +47,6 @@ def login():
 	driver.find_element_by_id ('steamPassword').send_keys('19216812a', Keys.ENTER) # Вписываем пароль
 	sleep(randint(2,4))
 
-#	driver.find_element_by_id('imageLogin').click() # Нажимаем логин
-#	sleep(randint(2,4))
-	
-	print('15 seconds cooldown')
-	sleep(15)
-
-	code = STEAM_CODE
 	driver.find_element_by_id('twofactorcode_entry').send_keys(code) # Вписываем 2F код
 	sleep(randint(2,4))
 
@@ -77,8 +73,8 @@ while True:
 	driver.get('https://csgetto.win/freeskin')
 	try:
 		driver.find_element_by_id('getFreeSkin').click()
-		print(f'[{time()}] Skin received, cooldown 24 hours')
-		sleep(86450)
+		print(f'[{time()}] Skin received, cooldown 20 minutes')
+		sleep(1200)
 	except:
 		print(f'[{time()}] Impossible to get skin, cooldown 10 minutes')
 		sleep(600)
