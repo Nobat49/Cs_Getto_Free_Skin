@@ -1,3 +1,4 @@
+from selenium.webdriver.common.keys import Keys
 from time import sleep, strftime
 from selenium import webdriver
 from random import randint
@@ -40,11 +41,14 @@ def login():
 	driver.find_element_by_id('steamAccountName').send_keys('noibat49') # Вписываем логин
 	sleep(randint(2,4))
 
-	driver.find_element_by_id ('steamPassword').send_keys('19216812a') # Вписываем пароль
+	driver.find_element_by_id ('steamPassword').send_keys('19216812a', Keys.ENTER) # Вписываем пароль
 	sleep(randint(2,4))
 
-	driver.find_element_by_id('imageLogin').click() # Нажимаем логин
-	sleep(randint(2,4))
+#	driver.find_element_by_id('imageLogin').click() # Нажимаем логин
+#	sleep(randint(2,4))
+	
+	print('15 seconds cooldown')
+	sleep(15)
 
 	code = STEAM_CODE
 	driver.find_element_by_id('twofactorcode_entry').send_keys(code) # Вписываем 2F код
