@@ -73,8 +73,8 @@ while True:
 	driver.get('https://csgetto.win/freeskin')
 	try:
 		driver.find_element_by_id('getFreeSkin').click()
-		print(f'[{time()}] Skin received, cooldown 20 minutes')
-		sleep(1200)
+		print(f'[{time()}] Skin received, cooldown 1 hour')
+		sleep(3530)
 	except:
-		print(f'[{time()}] Impossible to get skin, cooldown 10 minutes')
-		sleep(600)
+		print(f'[{time()}] Impossible to get skin, cooldown 1 hour')
+		sleep(3530)
