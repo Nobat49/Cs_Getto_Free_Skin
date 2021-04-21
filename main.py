@@ -20,7 +20,7 @@ def login():
 	driver.get('https://docs.google.com/document/d/e/2PACX-1vQibY5C9vCT2PKdpM9-EP4VnIdAGT9EoS1sM28zG9-ENlyMwnTCxaCzUewNQn2_0gT5U2Py1bVH2Gl5/pub')
 	code = driver.find_element_by_id('title').text
 
-	driver.get('https://csgetto.win/') # Открываем сайт
+	driver.get('https://csgetto.one/') # Открываем сайт
 	sleep(randint(1,3))
 
 	driver.find_element_by_xpath('/html/body/div[17]/div[2]/span').click() # Закрываем приветствие
@@ -73,8 +73,8 @@ while True:
 	driver.get('https://csgetto.win/freeskin')
 	try:
 		driver.find_element_by_id('getFreeSkin').click()
-		print(f'[{time()}] Skin received, cooldown 1 hour')
-		sleep(3530)
+		print(f'[{time()}] Skin received, cooldown 30 minutes')
+		sleep(1800)
 	except:
 		print(f'[{time()}] Impossible to get skin, cooldown 1 hour')
-		sleep(3530)
+		sleep(1800)
