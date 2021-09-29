@@ -17,7 +17,7 @@ def time():
 	return(strftime('%X'))
 
 def login():
-	driver.get('https://docs.google.com/document/d/e/2PACX-1vQibY5C9vCT2PKdpM9-EP4VnIdAGT9EoS1sM28zG9-ENlyMwnTCxaCzUewNQn2_0gT5U2Py1bVH2Gl5/pub')
+	driver.get(STEAM_GUARD_CODE)
 	code = driver.find_element_by_id('title').text
 
 	driver.get('https://csgetto.one/') # Открываем сайт
@@ -41,10 +41,10 @@ def login():
 	except:
 		print('Coockies was accept')
 
-	driver.find_element_by_id('steamAccountName').send_keys('noibat49') # Вписываем логин
+	driver.find_element_by_id('steamAccountName').send_keys(STEAM_LOGIN) # Вписываем логин
 	sleep(randint(1,3))
 
-	driver.find_element_by_id ('steamPassword').send_keys('19216812a', Keys.ENTER) # Вписываем пароль
+	driver.find_element_by_id ('steamPassword').send_keys(STEAM_PASSWORD, Keys.ENTER) # Вписываем пароль
 	sleep(randint(2,3))
 
 	driver.find_element_by_id('twofactorcode_entry').send_keys(code, Keys.ENTER) # Вписываем 2F код
