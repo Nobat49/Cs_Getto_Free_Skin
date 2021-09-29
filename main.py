@@ -50,8 +50,6 @@ def login():
 	driver.find_element_by_id('twofactorcode_entry').send_keys(code, Keys.ENTER) # Вписываем 2F код
 	sleep(randint(1,2))
 
-#	driver.find_element_by_xpath('//*[@id="login_twofactorauth_buttonset_entercode"]/div[1]').click() # Подтверждаем 2F код
-
 	driver.switch_to.window(pages[0]) # Выбираем первое окно
 
 	driver.close() # Закрываем окно
